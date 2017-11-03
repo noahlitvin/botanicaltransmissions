@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Botanical Transmissions Composer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header id="main">
+            <img src="img/white_logo.png" alt="Botanical Transmissions">
+            <h1>The Botanical Transmissions Composer</h1>
+            <a id="reset" class="button" href="#" onclick="window.location.reload()">Reset</a>
+        </header>
+
+        <div class="visualization-wrapper">
+            <svg id="visualization" width="100%" height="100px"></svg>
+        </div>
+        <div id="legend"></div>
+        <div id="app_container" class="no-generations no-installations">
+             <a id="add_generation" class="button" href="#">GENERATE MUSIC</a>
+                <header id="appheader"><div class="installation"><a id="add_installation" class="button" href="#">Add Installation &raquo;</a></div></header>
+            <div id="performances">
+            </div>
+            <div id="instructions">
+                <h1>Welcome to the Botanical Transmissions Composer</h1>
+                <p>This interface allows you generate MIDI files with the Botanical Transmissions algorithm. Add installations and generate music. Modify the relative plant health sliders to simulate the plants' changing reactions.</p>
+            </div>
+        </div>
+
+        <script id="InstallationTemplate" type="text/x-handlebars-template">
+            <span>Installation {{ installation_number }}</span>
+            <input type="range" class="fitness" min="0" value="{{ fitness }}" max="100" step="1" data-orientation="horizontal">
+        </script>
+
+        <script id="PerformanceTemplate" type="text/x-handlebars-template">
+            <button href="#" class="button play">Play</button>
+            <span>in {{ key }} {{ scale }} 
+            over {{ octaves }} octaves played at {{ bpm }} bpm 
+            by {{ instrumentation }}</span>
+        </script>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
